@@ -12,6 +12,8 @@ class SpellElements:
                    "shadow", "sonic", "water"]
     classes = ["bard", "cleric", "druid", "paladin", "ranger", "sorcerer", "wizard",
                "inquisitor", "magus", "omdura", "oracle", "summoner", "witch",
-               "vampire hunter", "arcanist", "bloodrager", "hunter"
-               ]
+               "vampire hunter", "arcanist", "bloodrager", "hunter", "shaman",
+               "skald", "warpriest", "medium", "mesmerist", "occultist", "psychic",
+               "spiritualist", "antipaladin"]
+
 
