@@ -1,4 +1,4 @@
 import titleScreen, characterScreen
 
 if __name__ == '__main__':
-    characterScreen.display()
+    titleScreen.display()
