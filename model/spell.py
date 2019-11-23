@@ -18,10 +18,12 @@ class Spell:
     -saving throw - obiekt
     -spell resistance - bool
     """
-    def __init__(self, school, subschool, descriptors, class_spell_level,
-                 bloodline, domain, subdomain, elemental_school,
-                 casting_time, components, spell_range, area, target,
-                 effect, duration, saving_throw, spell_resistance):
+
+    def __init__(self, school=None, subschool=[], descriptors=[],
+                 class_spell_level=[], bloodline=[], domain=[], subdomain=[],
+                 elemental_school=None, casting_time=None, components=[],
+                 spell_range=None, area=None, target=None, effect=None,
+                 duration=None, saving_throw=None, spell_resistance=None):
         self.school = school
         self.subschool = subschool
         self.descriptors = descriptors
