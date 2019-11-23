@@ -16,7 +16,7 @@ widgets = []
 
 def char_button_click():
     global widgets, window
-    
+
     characterScreen.display(window)
 
 
@@ -59,10 +59,12 @@ def create_char_button(window, FONT, character, row, column, text):
     widgets += [edit_button]
 
 
-def display():
-    global window, widgets
+def display(w=None):
+    global widgets, window
     # window initialization
-    window = window_init()
+    if w is None:
+        w = window_init()
+    window = w
     FONT = font.Font(family='Trebuchet MS')
 
     img = ImageTk.PhotoImage(Image.open("title_image.png"))

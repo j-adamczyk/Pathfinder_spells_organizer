@@ -7,11 +7,20 @@ BG_COLOR = 'grey11'
 BUTTON_COLOR = 'DarkOrange3'
 ON_CLICK_COLOR = 'DarkOrange4'
 TEXT_COLOR = BUTTON_COLOR
+window = None
 
 
-def display(window=None):
-    if window is None:
-        window = titleScreen.window_init()
+def char_button_click():
+    global window
+
+    titleScreen.display(window)
+
+
+def display(w=None):
+    global window
+    if w is None:
+        w = titleScreen.window_init()
+    window = w
     FONT = font.Font(family='Trebuchet MS')
 
     window.grid_rowconfigure(0, weight=1)
@@ -50,18 +59,24 @@ def display(window=None):
     # Create a frame to contain the buttons
     frame_buttons = Frame(canvas, bg="blue")
     canvas.create_window((0, 0), window=frame_buttons, anchor='nw')
+    Button(frame_main, text='back', command=char_button_click).grid(row=6, column=0, sticky=W)
     Checkbutton(frame_main, text="fire", variable=var1, bg=BG_COLOR, activeforeground=TEXT_COLOR, activebackground=BG_COLOR, fg=TEXT_COLOR).grid(row=2, column=0, sticky=W)
     Checkbutton(frame_main, text="water", variable=var2, bg=BG_COLOR, activeforeground=TEXT_COLOR, activebackground=BG_COLOR, fg=TEXT_COLOR).grid(row=3, column=0, sticky=W)
     Checkbutton(frame_main, text="earth", variable=var3, bg=BG_COLOR, activeforeground=TEXT_COLOR, activebackground=BG_COLOR, fg=TEXT_COLOR).grid(row=4, column=0, sticky=W)
     Checkbutton(frame_main, text="air", variable=var4, bg=BG_COLOR, activeforeground=TEXT_COLOR, activebackground=BG_COLOR, fg=TEXT_COLOR).grid(row=5, column=0, sticky=W)
 
+    control_variable = StringVar()
+    OPTION_TUPLE = ("Sorcerer", "War priest", "Druid")
+    optionmenu_widget = OptionMenu(frame_main, control_variable, *OPTION_TUPLE,
+                                   ).grid(row=2, column=1)
     # Add 9-by-5 buttons to the frame
     rows = 9
     columns = 5
     buttons = [[Button() for j in range(columns)] for i in range(rows)]
     for i in range(0, rows):
         for j in range(0, columns):
-            buttons[i][j] = Button(frame_buttons, text=("Spell {}{}".format(i, j)))
+            buttons[i][j] = Button(frame_buttons, text=("Spell {}{}".format(i, j)), bg=BG_COLOR, fg='khaki1',
+                                   activebackground=BG_COLOR, activeforeground='khaki1')
             buttons[i][j].grid(row=i, column=j, sticky='news')
 
     # Update buttons frames idle tasks to let tkinter calculate buttons sizes
