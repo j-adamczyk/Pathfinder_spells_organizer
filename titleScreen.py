@@ -4,6 +4,7 @@ BG_COLOR = 'grey11'
 BUTTON_COLOR = 'DarkOrange3'
 ON_CLICK_COLOR = 'DarkOrange4'
 
+
 def display():
     window = Tk()
     FONT = font.Font(family='Trebuchet MS')
@@ -14,7 +15,7 @@ def display():
     scrollbar = Scrollbar(window)
     scrollbar.pack(side=RIGHT, fill=Y)
 
-    v = IntVar()
+    spell_filter = IntVar()
 
     level_button = Spinbox(window,
                            from_=1.0,
@@ -29,7 +30,7 @@ def display():
                                     indicatoron=0,
                                     width=20,
                                     padx=20,
-                                    variable=v,
+                                    variable=spell_filter,
                                     value=1,
                                     bg=BUTTON_COLOR,
                                     activebackground=ON_CLICK_COLOR,
@@ -41,7 +42,7 @@ def display():
                                      indicatoron=0,
                                      width=20,
                                      padx=20,
-                                     variable=v,
+                                     variable=spell_filter,
                                      value=2,
                                      bg=BUTTON_COLOR,
                                      activebackground=ON_CLICK_COLOR,
