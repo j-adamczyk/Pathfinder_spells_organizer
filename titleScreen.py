@@ -29,7 +29,7 @@ def create_char_button(window, FONT, character, row, column):
                          bg=BUTTON_COLOR,
                          activebackground=ON_CLICK_COLOR,
                          highlightthickness=0
-                         ).grid(row=row, column=column, columnspan=2)
+                         ).place(x=0, y=120 + row * 40, )
     edit_button = Button(window,
                          text='+',
                          font=FONT,
@@ -38,7 +38,7 @@ def create_char_button(window, FONT, character, row, column):
                          bg=BUTTON_COLOR,
                          activebackground=ON_CLICK_COLOR,
                          highlightthickness=0
-                         ).grid(row=row, column=column + 1, columnspan=2)
+                         ).place(x=300, y=120 + row * 40, )
     # window.grid_columnconfigure(column + 1, )
 
 
@@ -52,8 +52,7 @@ def display():
     title = Label(window,
                   image=img,
                   bg=BG_COLOR, )
-    title.place(x=0, y=10)
-    title.grid(column=0, row=0)
+    title.place(x=50, y=10)
     # Add a canvas in that frame
 
     char_filter = IntVar()
@@ -67,5 +66,5 @@ def display():
                            padx=10,
                            bg=BUTTON_COLOR,
                            activebackground=ON_CLICK_COLOR,
-                           ).grid(row=2, column=0, )
+                           ).place(x=0, y=120 + 3 * 40, )
     window.mainloop()
