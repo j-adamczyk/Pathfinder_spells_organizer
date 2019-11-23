@@ -1,3 +1,6 @@
+from tkinter import *
 
 if __name__ == '__main__':
-    print(500000)
+    window = Tk()
+    window.title("PF spells organizer")
+    window.mainloop()
