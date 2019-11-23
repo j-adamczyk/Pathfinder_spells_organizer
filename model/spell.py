@@ -19,9 +19,9 @@ class Spell:
     -spell resistance - bool
     """
 
-    def __init__(self, school=None, subschool=[], descriptors=[],
-                 class_spell_level=[], bloodline=[], domain=[], subdomain=[],
-                 elemental_school=None, casting_time=None, components=[],
+    def __init__(self, school=None, subschool=None, descriptors=None,
+                 class_spell_level=None, bloodline=None, domain=None, subdomain=None,
+                 elemental_school=None, casting_time=None, components=None,
                  spell_range=None, area=None, target=None, effect=None,
                  duration=None, saving_throw=None, spell_resistance=None):
         self.school = school
